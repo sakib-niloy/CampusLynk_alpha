@@ -1,0 +1,5 @@
+# Sensitive information
+config/secrets.php
+
+# Composer dependencies
+/vendor/ 

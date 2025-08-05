@@ -1,0 +1,361 @@
+/* Only keep the flexbox-based layout for dashboard-layout, .sidebar, and #main-content. Remove any legacy rules at the top. */
+
+/* Layout Root */
+:root {
+    --sidebar-width: 250px;
+}
+
+/* Main Layout */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* Sidebar Layout */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--background);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    padding: 1rem 1rem 0.75rem 1rem;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+}
+
+.logo-and-title-div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+}
+
+.logo-and-title-div:hover {
+    background: var(--muted);
+}
+
+/* Brand/Logo */
+.navbar-brand {
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* User Info Section */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.user-info:hover {
+    background-color: var(--muted);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.user-avatar i {
+    font-size: 1.5rem;
+    color: var(--primary-foreground);
+}
+
+.user-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.97rem;
+}
+
+.user-email {
+    font-size: 0.78rem;
+    color: var(--muted-foreground);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 0.25rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    color: var(--foreground);
+    text-decoration: none;
+    border-radius: 0.45rem;
+    transition: all 0.2s;
+    font-size: 0.89rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: var(--muted);
+}
+
+.nav-link.active {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.nav-link.active i {
+    color: inherit;
+}
+
+.nav-link i {
+    font-size: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+}
+
+/* Logout Section */
+.sidebar-footer {
+    padding: 0.7rem 1rem;
+    border-top: 1px solid var(--border);
+    background: var(--background);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    width: 100%;
+    color: var(--destructive);
+    text-decoration: none;
+    border-radius: 0.45rem;
+    transition: all 0.2s;
+    font-size: 0.89rem;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+}
+
+.logout-btn i {
+    font-size: 1.25rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 2rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-menu-toggle i {
+    font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.sidebar {
+  flex: 0 0 220px;
+  min-width: 200px;
+  max-width: 240px;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 1px 8px 0 rgba(16, 22, 36, 0.03);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+.sidebar-logo {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 1.2rem 0 1rem 1.2rem;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.sidebar .nav-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sidebar .nav-link {
+  color: #1a2233;
+  background: none;
+  border-radius: 0.45rem;
+  margin: 0.05rem 0.4rem;
+  padding: 0.55rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.97rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(0,198,251,0.08);
+  color: #005bea;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link.sidebar-fade {
+  background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+  color: #fff !important;
+  box-shadow: 0 2px 12px 0 rgba(0,198,251,0.10);
+}
+
+.sidebar .nav-link.active i,
+.sidebar .nav-link.sidebar-fade i {
+  color: #fff !important;
+}
+
+.sidebar .nav-link i {
+  color: #1a2233;
+  transition: color 0.18s;
+  font-size: 1.13rem;
+}
+
+#main-content {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #f8fafc;
+  padding: 2.5rem;
+  overflow-x: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .dashboard-layout .sidebar {
+    min-width: 60px;
+    flex: 0 0 60px;
+  }
+  #main-content {
+    padding: 1rem 0.5rem;
+  }
+} 
