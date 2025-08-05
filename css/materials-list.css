@@ -1,0 +1,93 @@
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+.back-link i {
+    font-size: 1.25rem;
+}
+
+.page-header h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.materials-container {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.materials-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.material-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--muted);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--foreground);
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.material-item:hover {
+    background-color: var(--accent);
+    border-left-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.material-item .bxs-file-pdf {
+    color: var(--destructive);
+    font-size: 2rem;
+    margin-right: 1.5rem;
+}
+
+.material-item span {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.material-item .link-icon {
+    font-size: 1.25rem;
+    color: var(--muted-foreground);
+    transition: transform 0.2s ease;
+}
+
+.material-item:hover .link-icon {
+    transform: rotate(-45deg);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted-foreground);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: var(--border);
+} 

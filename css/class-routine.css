@@ -1,0 +1,176 @@
+/* Table Styles */
+.table-container {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+    margin-top: 2rem;
+}
+
+.table th {
+    padding: 12px;
+    text-align: left;
+    background-color: #e2e8f0;
+    color: #2d3748;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.table td {
+    padding: 4px;
+    vertical-align: top;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: var(--muted);
+}
+
+/* Time Column */
+.table td:first-child {
+    font-weight: 500;
+    color: var(--foreground);
+    white-space: nowrap;
+}
+
+/* Class Cell */
+.class-cell {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.class-name {
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.class-info {
+    font-size: 0.9em;
+    color: #4a5568;
+}
+
+.class-details {
+    font-size: 0.85em;
+    color: #718096;
+}
+
+.empty-cell {
+    min-height: 80px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .table-container {
+        margin: 0 -1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.5rem;
+    }
+}
+
+.routine-container {
+    background-color: var(--background);
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.day-column {
+    background-color: var(--muted);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.day-header {
+    padding: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+    border-bottom: 1px solid var(--border);
+}
+
+.class-slots {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.class-card {
+    background-color: var(--background);
+    border-radius: var(--radius);
+    padding: 1rem;
+    border-left: 4px solid var(--primary);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.class-time {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.class-title {
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+}
+
+.class-code {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.no-class-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--muted-foreground);
+    background-color: var(--background);
+    border-radius: var(--radius);
+    height: 100%;
+} 

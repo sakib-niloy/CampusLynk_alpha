@@ -1,0 +1,10 @@
+<important>
+
+dependencies list:
+
+pandas
+openpyxl
+mysql-connector-python
+pdfplumber 
+
+these are needed to run those py scripts to fetch data from pdf and excel sheets.

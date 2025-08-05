@@ -1,0 +1,325 @@
+/* Dashboard Specific Styles */
+
+/* Quick Access Cards Grid */
+.quick-access-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Quick Access Card */
+.quick-access-card {
+    position: relative;
+    padding: 1.5rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.quick-access-card:hover {
+    background: var(--muted);
+}
+
+/* Remove colored left borders */
+.border-purple,
+.border-yellow,
+.border-pink,
+.border-blue {
+  border-left: none !important;
+}
+
+/* Subtle colored glows for each card */
+.quick-access-card.glow-blue {
+  box-shadow: 0 2px 16px 0 rgba(56, 189, 248, 0.10), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+}
+.quick-access-card.glow-purple {
+  box-shadow: 0 2px 16px 0 rgba(162, 89, 247, 0.10), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+}
+.quick-access-card.glow-yellow {
+  box-shadow: 0 2px 16px 0 rgba(255, 209, 102, 0.10), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+}
+.quick-access-card.glow-pink {
+  box-shadow: 0 2px 16px 0 rgba(244, 123, 189, 0.10), 0 1.5px 4px 0 rgba(0,0,0,0.04);
+}
+
+.quick-access-card.glow-blue:hover {
+  box-shadow: 0 4px 32px 0 rgba(56, 189, 248, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.quick-access-card.glow-purple:hover {
+  box-shadow: 0 4px 32px 0 rgba(162, 89, 247, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.quick-access-card.glow-yellow:hover {
+  box-shadow: 0 4px 32px 0 rgba(255, 209, 102, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.quick-access-card.glow-pink:hover {
+  box-shadow: 0 4px 32px 0 rgba(244, 123, 189, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+
+/* Card Content Layout */
+.quick-access-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.quick-access-number {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.quick-access-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+}
+
+/* Card Icons */
+.quick-access-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    opacity: 0.2;
+}
+
+.quick-access-icon i {
+    font-size: 1.75rem;
+    color: var(--foreground);
+}
+
+/* Icon Background Colors - Clean shadcn/ui style */
+.purple { background: transparent; }
+.yellow { background: transparent; }
+.pink { background: transparent; }
+.blue { background: transparent; }
+
+.content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Main Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--muted);
+    border-radius: var(--radius);
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.activity-details .activity-title-sub {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--foreground);
+}
+
+.activity-details .activity-description {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+/* Quick Links Grid */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.quick-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.quick-link-btn:hover {
+    background: var(--muted);
+    border-color: var(--border-hover);
+}
+
+.quick-link-btn i {
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 2rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.text-muted {
+    color: var(--muted-foreground);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .quick-access-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .quick-access-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .quick-access-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .quick-access-card {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Dashboard Overview Grid */
+.dashboard-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.overview-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px 0 rgba(56, 189, 248, 0.07), 0 1.5px 4px 0 rgba(0,0,0,0.03);
+    padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+    min-height: 140px;
+}
+.overview-card:hover {
+    box-shadow: 0 6px 32px 0 rgba(56, 189, 248, 0.13), 0 2px 8px 0 rgba(0,0,0,0.08);
+    border-color: var(--primary);
+    transform: translateY(-2px) scale(1.02);
+}
+.overview-icon {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    background: transparent;
+    border-radius: 0.75rem;
+}
+.overview-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--foreground);
+}
+.overview-main {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+    color: var(--primary);
+}
+.overview-desc, .overview-date {
+    color: var(--muted-foreground);
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+}
+.overview-card.empty {
+    background: var(--muted);
+    color: var(--muted-foreground);
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 700px) {
+    .dashboard-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+body, .main-content, .card, .quick-access-card, .overview-card {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+} 
